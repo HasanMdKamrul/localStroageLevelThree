@@ -69,3 +69,28 @@ document.getElementById('reset-button').addEventListener('click',()=>{
     localStorage.clear()
 })
 
+// ** Send all functionality
+
+const sendAll = ()=>{
+    let user = {};
+    // ** get all 3 labels
+    const nameLabel = getTextInput('name-label');
+    const emailLabel = getTextInput('email-label');
+    const messageLabel = getTextInput('message-label');
+    // ** get all 3 input value
+    const nameValue = getInputValue('name-field');
+    const emailValue = getInputValue('email-field');
+    const messageValue = getInputValue('message-field');
+    // ** setting the user values
+    user[nameLabel] = nameValue;
+    user[emailLabel] = emailValue;
+    user[messageLabel] = messageValue;
+
+    // ** stringyfy the object user
+
+    const userStringyfy = JSON.stringify(user);
+
+    // ** set to ls 
+
+    localStorage.setItem('user',userStringyfy)
+}
