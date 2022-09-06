@@ -63,3 +63,9 @@ const storeValueInLs = (labelId,valueId)=>{
      setItem(labelKey,valueName)
 };
 
+// ** reset button functionality 
+
+document.getElementById('reset-button').addEventListener('click',()=>{
+    localStorage.clear()
+})
+
